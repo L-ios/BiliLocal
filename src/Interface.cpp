@@ -72,7 +72,7 @@ public:
 			p->setWindowTitle(Interface::tr("Loading"));
 			p->setFixedSize(p->sizeHint());
 			p->show();
-			connect(p,&QProgressDialog::canceled,Load::instance(),&Load::dequeue);
+            connect(p,SIGNAL(QProgressDialog::canceled),Load::instance(), SIGNAL(Load::dequeue));
 		}
 		p->setValue(1000*progress);
 	}
